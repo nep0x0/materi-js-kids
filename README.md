@@ -10,7 +10,7 @@ Sintaks adalah aturan penulisan kode agar komputer bisa mengerti apa yang kita i
 // Ini adalah komentar. Komentar tidak dibaca oleh komputer.
 console.log("Hello, world!"); // Ini akan menampilkan pesan "Hello, world!" di konsol
 ```
-[Coba Kode di atas di sini](https://www.programiz.com/javascript/online-compiler/){:target="_blank"}
+<a href="http://example.com/" target="_blank">example</a>
 
 ### Penjelasan
 - `//` digunakan untuk menulis komentar, yang tidak akan dijalankan oleh komputer. Komentar membantu kita mengingat apa yang dilakukan oleh bagian tertentu dari kode.
