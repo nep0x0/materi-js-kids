@@ -1,6 +1,3 @@
-Tentu, berikut adalah versi Markdown yang diperbarui dengan tugas sederhana untuk setiap materi:
-
-```markdown
 # Pengenalan JavaScript untuk Anak Usia 8 Tahun
 
 ## 1. Sintaks JavaScript (JavaScript Syntax)
@@ -207,6 +204,3 @@ for (var i = 0; i < 3; i++) {
 Belajar JavaScript itu seperti bermain dengan mainan baru. Kamu bisa mencoba berbagai hal dan melihat apa yang terjadi. Yang paling penting adalah bersenang-senang dan tidak takut mencoba hal baru!
 
 ![Penutup](https://path/to/closing-image.png)
-```
-
-Silakan ganti tautan gambar dengan tautan yang relevan sesuai dengan kebutuhan Anda. Jika Anda membutuhkan
