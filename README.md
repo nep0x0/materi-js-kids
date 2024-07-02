@@ -15,7 +15,7 @@ console.log("Hello, world!"); // Ini akan menampilkan pesan "Hello, world!" di k
 - `//` digunakan untuk menulis komentar, yang tidak akan dijalankan oleh komputer. Komentar membantu kita mengingat apa yang dilakukan oleh bagian tertentu dari kode.
 - `console.log("Hello, world!");` adalah perintah untuk menampilkan pesan "Hello, world!" di konsol.
 
-![Sintaks JavaScript](https://path/to/syntax-image.png)
+![Coba Kode di atas di sini](https://www.programiz.com/javascript/online-compiler/)
 
 ### Tugas Sederhana
 1. Buat komentar di kode kamu yang menjelaskan apa yang dilakukan oleh perintah `console.log`.
