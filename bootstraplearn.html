@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cobee The Coder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* :root - Mendefinisikan variabel CSS khusus untuk warna yang konsisten di seluruh halaman */
+        :root {
+            --dark-teal: #2c444e; /* Warna dasar untuk navbar dan hero section */
+            --accent-orange: #f39c12; /* Warna aksen oranye untuk brand, highlight, dan garis */
+        }
+
+        body { font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; } /* body - Menentukan font dan perilaku scroll yang halus */
+
+        /* --- Navbar --- */
+        .navbar { background-color: var(--dark-teal); } /* Kelas kustom untuk navbar, mengatur warna latar belakang */
+        .navbar-brand { color: var(--accent-orange) !important; font-weight: bold; } /* Kelas kustom untuk teks brand di navbar, memberi warna oranye dan tebal */
+        .nav-link { color: var(--accent-orange) !important; margin-left: 15px; } /* Kelas kustom untuk tautan navigasi, warna oranye dan jarak kiri */
+        
+        /* Navbar Toggler Putih */
+        .navbar-toggler { border-color: rgba(255, 255, 255, 0.5); } /* Kelas Bootstrap yang dimodifikasi, mengubah warna border toggler menjadi putih transparan */
+        .navbar-toggler-icon { 
+            filter: brightness(0) invert(1); /* Kelas Bootstrap yang dimodifikasi, mengubah ikon toggler menjadi putih */
+        }
+
+        /* --- Global --- */
+        section { padding: 100px 0; } /* Elemen section - Memberi padding vertikal */
+        .section-title { font-weight: bold; margin-bottom: 50px; text-align: center; } /* Kelas kustom untuk judul section, tebal, margin bawah, dan rata tengah */
+        .highlight { color: var(--accent-orange); font-weight: bold; } /* Kelas kustom untuk teks yang ingin diberi aksen oranye dan tebal */
+
+        /* --- Hero Section --- */
+        #hero {
+            background-color: var(--dark-teal); /* ID selector untuk hero section, warna latar belakang teal gelap */
+            color: white; /* Teks berwarna putih */
+            padding-bottom: 150px; /* Padding bawah untuk memberi ruang pada elemen gelombang */
+            position: relative; /* Posisi relatif untuk penempatan absolut elemen gelombang */
+        }
+        .orange-line {
+            height: 5px; /* Kelas kustom untuk garis oranye dekoratif */
+            background-color: var(--accent-orange); /* Warna oranye */
+            width: 300px; /* Lebar garis */
+            margin: 20px 0; /* Margin vertikal */
+            border-radius: 5px; /* Sudut membulat */
+        }
+
+        /* --- About Me Section --- */
+        #about { background-color: #ffffff; color: #333; } /* ID selector untuk about section, latar putih, teks abu-abu gelap */
+        .profile-img {
+            border-radius: 20px; /* Kelas kustom untuk gambar profil, sudut sangat membulat */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Bayangan halus */
+            max-width: 100%; /* Agar responsif dalam container */
+        }
+
+        /* --- Skill Section --- */
+        #skill { background-color: #f8f9fa; } /* ID selector untuk skill section, latar abu-abu sangat muda (Bootstrap light) */
+        .skill-card {
+            border: none; /* Kelas kustom untuk kartu skill, tanpa border */
+            border-top: 5px solid var(--accent-orange); /* Garis oranye tebal di atas */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Bayangan sangat halus */
+        }
+
+        /* --- Activity Section --- */
+        #activity { background-color: #ffffff; } /* ID selector untuk activity section, latar putih */
+        .activity-item {
+            border-left: 5px solid var(--dark-teal); /* Kelas kustom untuk item aktivitas, garis tepi kiri warna teal gelap */
+            padding: 20px; /* Padding internal */
+            background: #f8f9fa; /* Latar abu-abu sangat muda */
+            border-radius: 0 10px 10px 0; /* Sudut membulat di kanan atas dan kanan bawah */
+            margin-bottom: 20px; /* Jarak antar item */
+        }
+
+        /* --- Wave Decor --- */
+        .wave-bottom {
+            position: absolute; /* Kelas kustom untuk dekorasi gelombang, diposisikan absolut terhadap parent (#hero) */
+            bottom: 0; /* Menempel di bagian bawah parent */
+            width: 100%; /* Lebar penuh */
+            line-height: 0; /* Menghilangkan jarak vertikal dari SVG */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigasi Utama (Navbar) -->
+    <!-- class="navbar navbar-expand-lg sticky-top": 
+         navbar - class dasar Bootstrap untuk komponen navbar.
+         navbar-expand-lg - navbar akan horizontal pada layar large (>=992px) dan vertikal (collapsible) di bawahnya.
+         sticky-top - Bootstrap, membuat navbar tetap menempel di atas saat di-scroll.
+    -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <!-- class="container": Bootstrap, kontainer responsif yang melebar sesuai breakpoint, memberikan padding horizontal. -->
+        <div class="container">
+            <!-- class="navbar-brand": Bootstrap, gaya khusus untuk teks brand/logo di navbar. -->
+            <!-- class="fas fa-code me-2": Font Awesome, ikon kode. me-2 adalah Bootstrap untuk margin right level 2. -->
+            <a class="navbar-brand" href="#"><i class="fas fa-code me-2"></i> Cobee The Coder</a>
+            
+            <!-- Tombol untuk navbar yang responsif (hamburger menu) -->
+            <!-- class="navbar-toggler": Bootstrap, gaya tombol toggler. -->
+            <!-- data-bs-toggle="collapse" data-bs-target="#navbarNav": Bootstrap, menghubungkan tombol dengan elemen yang akan di-collapse (id="navbarNav"). -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- class="navbar-toggler-icon": Bootstrap, ikon hamburger default. -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- class="collapse navbar-collapse": Bootstrap, wrapper untuk konten navbar yang akan di-collapse. -->
+            <!-- id="navbarNav": ID unik yang ditarget oleh tombol toggler. -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- class="navbar-nav ms-auto": Bootstrap, daftar tautan navigasi. ms-auto adalah Bootstrap untuk margin left auto, mendorong menu ke kanan. -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- class="nav-item": Bootstrap, penanda item dalam navbar-nav. -->
+                    <!-- class="nav-link": Bootstrap, gaya untuk tautan navigasi. -->
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skill">Skill</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#activity">Activity</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Konten Utama Halaman -->
+    <main>
+        <!-- Bagian Hero (Selamat Datang) -->
+        <!-- id="hero": ID untuk navigasi dan styling CSS khusus. -->
+        <section id="hero">
+            <!-- class="container": Bootstrap, kontainer responsif. -->
+            <div class="container">
+                <!-- class="row align-items-center": Bootstrap, sistem grid dengan baris. align-items-center Bootstrap untuk memusatkan kolom secara vertikal. -->
+                <div class="row align-items-center">
+                    <!-- class="col-lg-6": Bootstrap, kolom yang menempati 6 dari 12 kolom pada layar large ke atas. -->
+                    <div class="col-lg-6">
+                        <!-- class="display-4 fw-bold mb-4": Bootstrap, kelas untuk heading besar (display-4), fw-bold untuk teks tebal, mb-4 untuk margin bottom. -->
+                        <h1 class="display-4 fw-bold mb-4">Get Programming Tips Here!</h1>
+                        <!-- class="fs-4 fw-light": Bootstrap, ukuran font 4, fw-light untuk ketebalan font tipis. -->
+                        <p class="fs-4 fw-light">Let's Start with Creating Simple <span class="highlight">Game and Website!</span></p>
+                        <!-- class="orange-line": Kelas kustom untuk garis oranye dekoratif. -->
+                        <div class="orange-line"></div>
+                        <!-- class="text-white text-decoration-none": Bootstrap, text-white untuk warna putih, text-decoration-none untuk menghilangkan garis bawah tautan. -->
+                        <a href="#about" class="text-white text-decoration-none">Learn Basic Programming here <i class="fas fa-arrow-down ms-2"></i></a>
+                    </div>
+                    <!-- class="col-lg-6 text-center mt-5 mt-lg-0": Bootstrap, kolom, teks rata tengah, margin top level 5 di bawah layar large, dan 0 di atasnya. -->
+                    <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                        <!-- class="img-fluid": Bootstrap, membuat gambar responsif (max-width: 100% dan height: auto). -->
+                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/web-development-2900150-2413554.png" class="img-fluid" alt="Illustration">
+                    </div>
+                </div>
+            </div>
+            <!-- class="wave-bottom": Kelas kustom untuk menempatkan dekorasi gelombang SVG. -->
+            <div class="wave-bottom">
+                <!-- SVG untuk gelombang putih sebagai pemisah dengan section berikutnya. preserveAspectRatio="none" membuat SVG meregang. -->
+                <svg viewBox="0 0 1440 320" preserveAspectRatio="none"><path fill="#ffffff" d="M0,224L120,213.3C240,203,480,181,720,186.7C960,192,1200,224,1320,240L1440,256L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+            </div>
+        </section>
+
+        <!-- Bagian Tentang Saya (About Me) -->
+        <!-- id="about": ID untuk navigasi dan styling CSS khusus. -->
+        <section id="about">
+            <div class="container">
+                <!-- class="row align-items-center": Bootstrap, baris dengan konten vertikal di tengah. -->
+                <div class="row align-items-center">
+                    <!-- class="col-lg-5 mb-4 mb-lg-0": Bootstrap, kolom 5/12 di layar large, margin bottom 4 di bawah large, 0 di atasnya. -->
+                    <div class="col-lg-5 mb-4 mb-lg-0">
+                        <!-- class="profile-img": Kelas kustom untuk gaya gambar profil (border radius, bayangan). -->
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="About Me" class="profile-img">
+                    </div>
+                    <!-- class="col-lg-7": Bootstrap, kolom 7/12 di layar large. -->
+                    <div class="col-lg-7">
+                        <!-- class="fw-bold mb-4": Bootstrap, teks tebal, margin bottom 4. -->
+                        <!-- class="text-warning": Bootstrap, teks berwarna kuning (bootstrap warning). -->
+                        <h2 class="fw-bold mb-4">About <span class="text-warning">Me</span></h2>
+                        <!-- class="lead": Bootstrap, membuat paragraf lebih menonjol (ukuran font lebih besar). -->
+                        <p class="lead">Halo! Saya adalah seorang pengajar coding yang fokus pada pengembangan logika untuk siswa tingkat menengah (SMP).</p>
+                        <p>Saya percaya bahwa belajar pemrograman bukan hanya soal mengetik kode, tapi tentang memecahkan masalah. Saya aktif mengembangkan kurikulum berbasis Python, Game Development (Roblox & Scratch), serta implementasi teknologi AI sederhana seperti Computer Vision.</p>
+                        <!-- class="row mt-4": Bootstrap, baris baru dalam grid, margin top 4. -->
+                        <div class="row mt-4">
+                            <!-- class="col-6": Bootstrap, kolom yang menempati 6 kolom (setengah lebar) pada semua layar. -->
+                            <div class="col-6">
+                                <!-- class="fw-bold": Bootstrap, teks tebal. -->
+                                <!-- class="fas fa-check-circle text-success me-2": Font Awesome ikon centang lingkaran, Bootstrap text-success (warna hijau), me-2 margin right 2. -->
+                                <h6 class="fw-bold"><i class="fas fa-check-circle text-success me-2"></i> 7+ Lesson Modules</h6>
+                                <h6 class="fw-bold"><i class="fas fa-check-circle text-success me-2"></i> Coding Mentor</h6>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="fw-bold"><i class="fas fa-check-circle text-success me-2"></i> Game Developer</h6>
+                                <h6 class="fw-bold"><i class="fas fa-check-circle text-success me-2"></i> Python Enthusiast</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Keahlian (Skill) -->
+        <!-- id="skill": ID untuk navigasi dan styling CSS khusus. -->
+        <section id="skill">
+            <div class="container">
+                <!-- class="section-title": Kelas kustom untuk judul section. -->
+                <!-- class="text-warning": Bootstrap, teks kuning. -->
+                <h2 class="section-title">Technical <span class="text-warning">Skills</span></h2>
+                <!-- class="row g-4 text-center": Bootstrap, baris grid dengan gutter (jarak antar kolom) level 4, dan teks rata tengah. -->
+                <div class="row g-4 text-center">
+                    <!-- class="col-md-4": Bootstrap, kolom yang menempati 4/12 (sepertiga) pada layar medium ke atas. -->
+                    <div class="col-md-4">
+                        <!-- class="card h-100 skill-card p-4": Bootstrap, card dengan tinggi penuh (h-100), ditambah kelas kustom skill-card, dan padding level 4. -->
+                        <div class="card h-100 skill-card p-4">
+                            <!-- class="fab fa-python fs-1 mb-3 text-primary": Font Awesome ikon Python, Bootstrap fs-1 ukuran font terbesar, mb-3 margin bottom, text-primary warna biru. -->
+                            <i class="fab fa-python fs-1 mb-3 text-primary"></i>
+                            <h5>Python & AI</h5>
+                            <!-- class="text-muted small": Bootstrap, teks berwarna abu-abu (muted) dan berukuran kecil. -->
+                            <p class="text-muted small">Pygame, OpenCV, & YOLOv8</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 skill-card p-4">
+                            <!-- class="fas fa-laptop-code fs-1 mb-3 text-info": Font Awesome ikon coding di laptop, Bootstrap text-info warna biru laut. -->
+                            <i class="fas fa-laptop-code fs-1 mb-3 text-info"></i>
+                            <h5>Web Design</h5>
+                            <p class="text-muted small">HTML5, CSS3, & Bootstrap 5</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 skill-card p-4">
+                            <!-- class="fas fa-gamepad fs-1 mb-3 text-danger": Font Awesome ikon gamepad, Bootstrap text-danger warna merah. -->
+                            <i class="fas fa-gamepad fs-1 mb-3 text-danger"></i>
+                            <h5>Game Platforms</h5>
+                            <p class="text-muted small">Roblox (Luau) & Scratch</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Aktivitas (Activity) -->
+        <!-- id="activity": ID untuk navigasi dan styling CSS khusus. -->
+        <section id="activity">
+            <div class="container">
+                <h2 class="section-title">Recent <span class="text-warning">Activities</span></h2>
+                <!-- class="row justify-content-center": Bootstrap, baris dengan konten kolom yang dipusatkan (justify-content-center). -->
+                <div class="row justify-content-center">
+                    <!-- class="col-lg-8": Bootstrap, kolom yang menempati 8/12 (dua pertiga) pada layar large ke atas. -->
+                    <div class="col-lg-8">
+                        <!-- class="activity-item shadow-sm": Kelas kustom activity-item ditambah Bootstrap shadow-sm untuk bayangan kecil. -->
+                        <div class="activity-item shadow-sm">
+                            <h5 class="fw-bold">Mengajar Siswa SMP</h5>
+                            <p class="mb-0 text-muted">Menyusun jurnal harian dan modul dasar Python untuk siswa usia 13 tahun.</p>
+                        </div>
+                        <div class="activity-item shadow-sm">
+                            <h5 class="fw-bold">Highway Vehicle Tracking</h5>
+                            <p class="mb-0 text-muted">Proyek Computer Vision menggunakan OpenCV untuk menghitung kendaraan di jalan raya.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script Bootstrap (JavaScript) untuk fungsionalitas komponen interaktif seperti navbar toggler -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
